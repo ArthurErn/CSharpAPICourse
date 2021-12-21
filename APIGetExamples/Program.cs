@@ -5,32 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-//METODO GET BASICO
-
-// app.MapGet("/", () => "Hello World!");
-
-
-//ADICIONAR HEADERS NA ROTA GET
-
-// app.MapGet("/AddHeader", (HttpResponse response) =>
-// {
-// 	response.Headers.Add("header", "Arthur ern");
-// 	return "Olá, mundo";
-// });
-
-
-
-
-
-//PEGANDO OS DADOS POR QUERY E RETORNANDO
-//EX: localhost:3001/getproduct?datainicial=26/12/2015&datafinal=21/07/2019
-
-// app.MapGet("/getproduct", ([FromQuery] string dataInicial, [FromQuery] string dataFinal) =>
-// {
-// 	return dataInicial + " - " + dataFinal;
-// });
-
-
 //POSTAR UMA ENTIDADE E RETORNA-LA
 app.MapPost("/saveproduct", (Product product) =>
 {
