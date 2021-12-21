@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YAIuLE8kuI8DdX4CR/bteGCDC0n2rSm9BHbymNMmdq3YT3TzMc7NWFDkd0LAfzI5btztpdji6qCtoFxsDF3k2w==",
+  "dgSpecHash": "XyPYmoHw2uuctV478vbIb2kQgymCl84G0hn7fIKQxv9x5/E7Lfqod2Lo70gM4QiPBQCv89QVtDR1wuQYUsF22w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vista\\Desktop\\ApiCSharp\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\Vista\\Documents\\GitHub\\CSharpAPICourse\\APIGetExamples\\api.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

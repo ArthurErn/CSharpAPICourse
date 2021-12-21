@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vista\\Desktop\\ApiCSharp\\api\\api.csproj": {}
+    "C:\\Users\\Vista\\Documents\\GitHub\\CSharpAPICourse\\APIGetExamples\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vista\\Desktop\\ApiCSharp\\api\\api.csproj": {
+    "C:\\Users\\Vista\\Documents\\GitHub\\CSharpAPICourse\\APIGetExamples\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vista\\Desktop\\ApiCSharp\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\Vista\\Documents\\GitHub\\CSharpAPICourse\\APIGetExamples\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\Vista\\Desktop\\ApiCSharp\\api\\api.csproj",
+        "projectPath": "C:\\Users\\Vista\\Documents\\GitHub\\CSharpAPICourse\\APIGetExamples\\api.csproj",
         "packagesPath": "C:\\Users\\Vista\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vista\\Desktop\\ApiCSharp\\api\\obj\\",
+        "outputPath": "C:\\Users\\Vista\\Documents\\GitHub\\CSharpAPICourse\\APIGetExamples\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
