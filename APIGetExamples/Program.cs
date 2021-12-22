@@ -1,74 +1,78 @@
-//ATUALIZADO
-//SALVANDO E RETORNANDO JSON, ARMAZENADOS NO CACHE
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration["Database:SqlServer"]);
 
-app.MapPost("/product", (Product product) =>
+var app = builder.Build();
+var configuration = app.Configuration;
+ProductRepo.Init(configuration);
+
+app.MapPost("/product", (ProductRequest productRequest, ApplicationDbContext context) =>
 {
-	ProductRepo.addProduct(product);
-	return Results.Created("OK", "Usuário criado com sucesso!");
+	var category = context?.Category?.Where(c => c.Id == productRequest.CategoryId).First();
+	var product = new Product
+	{
+		Code = productRequest.Code,
+		Name = productRequest.Name,
+		Description = productRequest.Description,
+		Category = category
+	};
+	if (productRequest.Tags != null)
+	{
+		product.Tags = new List<Tag>();
+		foreach (var item in productRequest.Tags)
+		{
+			product.Tags.Add(new Tag { Name = item });
+		}
+	}
+	context?.Products?.Add(product);
+	context?.SaveChanges();
+	return Results.Created("OK", $"Usuário {product.Id} criado com sucesso!");
 });
 
-app.MapGet("/product/{code}", ([FromRoute] string code) =>
+app.MapGet("/product/{id}", ([FromRoute] int id, ApplicationDbContext context) =>
 {
-	var product = ProductRepo.getProduct(code);
+	var product = context.Products.Include(p => p.Category).Include(p => p.Tags).Where(p => p.Id == id);
 	if (product != null)
 	{
-		System.Console.WriteLine($"User: {product.Name}");
 		return Results.Ok(product);
 	}
 	return Results.NotFound();
 });
 
-app.MapPut("/product", (Product product) =>
+app.MapPut("/product/{id}", ([FromRoute] int id, ProductRequest productRequest, ApplicationDbContext context) =>
 {
-	var productSaved = ProductRepo.getProduct(product.Code ?? " ");
-	productSaved!.Name = product.Name;
-	return "Usuário editado com sucesso!";
+	var product = context?.Products?.Include(p => p.Tags).Where(p => p.Id == id).First();
+	var category = context?.Category?.Where(c => c.Id == productRequest.CategoryId).First();
+	product.Code = productRequest.Code;
+	product.Name = productRequest.Name;
+	product.Description = productRequest.Description;
+	product.Category = category;
+	product.Tags = new List<Tag>();
+	if (productRequest.Tags != null)
+	{
+		product.Tags = new List<Tag>();
+		foreach (var item in productRequest.Tags)
+		{
+			product.Tags.Add(new Tag { Name = item });
+		}
+	}
+	context?.SaveChanges();
+	return Results.Ok("Usuário editado com sucesso!");
 });
 
-app.MapDelete("/product/{code}", ([FromRoute] string code) =>
+app.MapDelete("/product/{id}", ([FromRoute] int id, ApplicationDbContext context) =>
 {
-	var product = ProductRepo.getProduct(code);
-	ProductRepo.removeProduct(product!);
+	var product = context.Products.Where(p => p.Id == id).First();
+	context.Products.Remove(product);
+	context.SaveChanges();
 	return Results.Ok($"Usuário '{product?.Name}' deletado com sucesso");
 });
 
 app.MapGet("/configuration/database", (IConfiguration configuration) =>
 {
-	return Results.Ok(configuration["database:connection"]);
+	return Results.Ok(configuration["database:connection"] + ":" + configuration["database:port"]);
 });
 
 app.Run();
-
-public static class ProductRepo
-{
-	public static List<Product>? Products { get; set; }
-
-	public static void addProduct(Product product)
-	{
-		if (Products == null)
-		{
-			Products = new List<Product>();
-		}
-		Products.Add(product);
-	}
-
-	public static Product? getProduct(string code)
-	{
-		return Products?.First(product => product.Code == code);
-	}
-
-	public static void removeProduct(Product product)
-	{
-		Products?.Remove(product);
-	}
-}
-
-public class Product
-{
-	public string? Code { get; set; }
-	public string? Name { get; set; }
-}
