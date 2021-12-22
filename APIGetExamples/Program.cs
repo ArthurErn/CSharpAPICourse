@@ -33,7 +33,7 @@ app.MapPost("/product", (ProductRequest productRequest, ApplicationDbContext con
 
 app.MapGet("/product/{id}", ([FromRoute] int id, ApplicationDbContext context) =>
 {
-	var product = context.Products.Include(p => p.Category).Include(p => p.Tags).Where(p => p.Id == id);
+	var product = context?.Products?.Include(p => p.Category).Include(p => p.Tags).Where(p => p.Id == id);
 	if (product != null)
 	{
 		return Results.Ok(product);
@@ -64,8 +64,8 @@ app.MapPut("/product/{id}", ([FromRoute] int id, ProductRequest productRequest, 
 
 app.MapDelete("/product/{id}", ([FromRoute] int id, ApplicationDbContext context) =>
 {
-	var product = context.Products.Where(p => p.Id == id).First();
-	context.Products.Remove(product);
+	var product = context.Products?.Where(p => p.Id == id).First();
+	context.Products?.Remove(product);
 	context.SaveChanges();
 	return Results.Ok($"Usuário '{product?.Name}' deletado com sucesso");
 });
