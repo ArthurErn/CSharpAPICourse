@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1mRP4o2J/coiJ72V8hh9HOaJCz0nhhKLjAfgN+SUVUU=",
+  "Source": "PostgreSQLconnect",
+  "BasePath": "_content/PostgreSQLconnect",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

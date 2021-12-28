@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2vi34ZluZXLUx9uBIrCxT/JaTWz1fjktonfrCGCSJQy+p7zZaaRnZ2O7G1Uj5lEUBk+GYQZ9jUELi8l3RRUuug==",
+  "dgSpecHash": "UROFMmb3nub7+C2eT1kQ/j/ZXmomaPAkmpvtkhDfbg5xNnGHMHw/AQR3ITT/G0RwclMqTXGoOu41aoHxmI8Dzg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vista\\Documents\\GitHub\\CSharpAPICourse\\APIGetExamples\\api.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Vista\\.nuget\\packages\\npgsql\\6.0.2\\npgsql.6.0.2.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
