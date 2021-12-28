@@ -7,9 +7,8 @@ namespace PostgreSQLconnect
 	{
 
 		public DbSet<ProductEntity> Product { get; set; }
-		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base()
-		{
-		}
+
+		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base() { }
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
@@ -17,8 +16,7 @@ namespace PostgreSQLconnect
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
-			//options.UseSqlServer(@"Server=localhost;Database=TestingCRUD;User Id=sa;Password=@sql2021;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES");
-			options.UseNpgsql(@"Server=<YOUR_HOST>>;Port=<PORT>;Database=<DB>;User Id=postgres;Password=<YOUR_PASSWORD>>");
+			options.UseNpgsql(@"Server=192.168.18.65;Port=5432;Database=APICsharp;User Id=postgres;Password=Kalisba987");
 		}
 	}
 }
