@@ -14,7 +14,7 @@ namespace PostgreSQLconnect.Modules.Endpoints
 		{
 			var response = context.Product.Where(p =>  p.Id == id).FirstOrDefault();
 			if (response is null)
-				return Results.Ok("Nenhum usuário encontrado");
+				return Results.BadRequest("Nenhum usuário encontrado");
 			return Results.Ok(response);
 		}
     }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ChI+ZVKJxnsS4cPSagi4/PAPAN9kktSIHNLyhpK2+RVcjGqqMMTWpMpnUH+mciIFQzoj2TER1FdyOkNuCm1H9g==",
+  "dgSpecHash": "huAfkZrQRNSHSPVRXuI3y8Kfj1FMghRDHgg5/PSmaS8DtMQYO78Ut8/ZQ1GLWfmk2touQevUKVxqjul8RTgItQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vista\\Documents\\GitHub\\CSharpAPICourse\\PostgreSQLconnect\\PostgreSQLconnect.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.1\\microsoft.entityframeworkcore.sqlserver.6.0.1.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.0\\microsoft.extensions.caching.memory.6.0.0.nupkg.sha512",
+    "C:\\Users\\Vista\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\Vista\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

@@ -13,7 +13,7 @@ namespace PostgreSQLconnect.Modules.Endpoints
 		{
 			var category = context.Product.Where(p => p.Id == id).FirstOrDefault();
 			if (category is null)
-				return Results.Ok("Usuário não encontrado");
+				return Results.BadRequest("Usuário não encontrado");
 			context.Product.Remove(category!);
 			context.SaveChanges();
 			return Results.Ok("Usuário " + category!.Nome + " foi removido com sucesso!");

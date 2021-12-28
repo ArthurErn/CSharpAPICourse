@@ -1,22 +1,31 @@
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 using Entities;
+using Npgsql;
 
 namespace PostgreSQLconnect
 {
 	public class ApplicationDBContext : DbContext
 	{
+		public DbSet<ProductEntity> Product { get; set; } = null!;
+		private string connectionString;
 
-		public DbSet<ProductEntity> Product { get; set; }
-
-		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base() { }
+		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base()
+		{
+			var builder = new ConfigurationBuilder();
+			builder.AddJsonFile("appsettings.Development.json", optional: false);
+			var configuration = builder.Build();
+			connectionString = configuration["ConnectionString:Default"];
+		}
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			builder.Entity<ProductEntity>().HasKey(p => p.Id);
+
 		}
-		protected override void OnConfiguring(DbContextOptionsBuilder options)
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			options.UseNpgsql(@"Server=192.168.18.65;Port=5432;Database=APICsharp;User Id=postgres;Password=Kalisba987");
+			optionsBuilder.UseNpgsql(connectionString);
 		}
 	}
 }

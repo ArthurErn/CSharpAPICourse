@@ -3,7 +3,7 @@ using PostgreSQLconnect;
 using PostgreSQLconnect.Modules.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseNpgsql("Server=192.168.18.65;Port=5432;Database=APICsharp;User Id=postgres;Password=Kalisba987"));
+builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseNpgsql(builder.Configuration["ConnectionString:Default"]));
 var app = builder.Build();
 
 app.MapMethods(ProductGetAll.Template, ProductGetAll.Methods, ProductGetAll.Handle);

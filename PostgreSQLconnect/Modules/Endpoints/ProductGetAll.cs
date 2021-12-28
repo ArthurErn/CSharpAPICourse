@@ -14,7 +14,7 @@ namespace PostgreSQLconnect.Modules.Endpoints
 			var product = context.Product.ToList();
 			var response = product.Select(p => new ProductResponse { Id = p.Id, Nome = p.Nome, Senha = p.Senha });
 			if (response.ToArray().Length == 0)
-				return Results.Ok("Nenhum usuário encontrado");
+				return Results.BadRequest("Nenhum usuário encontrado");
 			return Results.Ok(response);
 		}
 	}

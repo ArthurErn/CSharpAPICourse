@@ -2,7 +2,7 @@ namespace Entities
 {
 	public class ProductEntity
 	{
-		public ProductEntity(string? nome, string? senha){
+		public ProductEntity(string? nome, string? senha) {
 			Nome = nome;
 			Senha = senha;
 		}
