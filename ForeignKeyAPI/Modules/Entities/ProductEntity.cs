@@ -2,12 +2,9 @@ namespace ForeignKeyAPI.Modules.Entities
 {
     public class Product
     {
-		// public Product(string? nome, string? fabricante, double preco, Group grupo){
-		// 	Nome = nome;
-		// 	Fabricante = fabricante;
-		// 	Preco = preco;
-		// 	Grupo = grupo;
-		// }
+		public Product(){
+			Grupo = new Group();
+		}
 
         public int Id { get; set; }
 		public string? Nome { get; set; }

@@ -12,6 +12,7 @@ app.MapMethods(GroupGetAll.Template, GroupGetAll.Methods, GroupGetAll.Handle);
 app.MapMethods(GroupPost.Template, GroupPost.Methods, GroupPost.Handle);
 app.MapMethods(ProductGetAll.Template, ProductGetAll.Methods, ProductGetAll.Handle);
 app.MapMethods(ProductPost.Template, ProductPost.Methods, ProductPost.Handle);
+app.MapMethods(ProductGet.Template, ProductGet.Methods, ProductGet.Handle);
 
 
 app.Run();
