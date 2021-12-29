@@ -5,8 +5,8 @@ namespace ForeignKeyAPI.Modules
 {
 	public class ApplicationDBContext : DbContext
 	{
-		public DbSet<Group> Group { get; set; }
-		public DbSet<Product> Product { get; set; }
+		public DbSet<Group> Group { get; set; } = null!;
+		public DbSet<Product> Product { get; set; } = null!;
 		private string connectionString;
 
 		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base()
