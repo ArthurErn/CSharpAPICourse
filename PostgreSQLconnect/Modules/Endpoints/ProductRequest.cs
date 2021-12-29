@@ -6,10 +6,10 @@ namespace PostgreSQLconnect.Modules.Endpoints
 		public string? Nome { get; set; }
 		public string? Senha { get; set; }
 
-		public ProductRequest(string? nome, string? senha)
-		{
-			Nome = nome;
-			Senha = senha;
-		}
+		// public ProductRequest(string? nome, string? senha)
+		// {
+		// 	Nome = nome;
+		// 	Senha = senha;
+		// }
 	}
 }
