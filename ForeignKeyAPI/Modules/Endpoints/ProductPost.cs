@@ -10,7 +10,8 @@ namespace ForeignKeyAPI.Modules.Endpoints
 
 		public static IResult Action(ProductRequest pRequest, ApplicationDBContext context)
 		{
-			var group = context.Group.Where(g => g.Id == pRequest.GrupoId).First();
+			var group = context.Group.Where(g => g.Id == pRequest.GrupoId).FirstOrDefault();
+			if (group is null) return Results.BadRequest("Falha ao cadastrar produto ( grupo inexistente )");
 			var product = new Product
 			{
 				Nome = pRequest.Nome,
